@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b82sse48b5q3j"]
+
+[ext_resource type="Texture2D" uid="uid://1nj43d5ym2b7" path="res://Sprites/platforms/smallPlatforml.png" id="1_4xk5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flb1l"]
+size = Vector2(49, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1946657428]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=69356157]
+texture = ExtResource("1_4xk5q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1798842593]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1152674676]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_flb1l")
+one_way_collision = true

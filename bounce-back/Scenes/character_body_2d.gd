@@ -8,6 +8,7 @@ const MaxJumpTime = 0.7
 var jumpTime = 0
 var prevSpeedY = 0
 var firstGroundTouch = false
+var fallTime = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -15,9 +16,15 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		jumpTime += delta
+		if velocity.y > 0:
+			fallTime += delta
+			
 	if is_on_floor():
-		firstGroundTouch = true # you cant move on x axis until youve hit the ground for the first time
+		fallTime = 0
 		jumpTime = 0
+		firstGroundTouch = true # you cant move on x axis until youve hit the ground for the first time
+		
+		
 	
 	if is_on_floor() and prevSpeedY>1250:
 		for i in range(prevSpeedY/70):
@@ -26,6 +33,10 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor() and prevSpeedY>500:
 		velocity.y = prevSpeedY/2
+		
+	if fallTime > 2.5:
+		self.velocity.y = -1250
+		fallTime = 0
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("spacebar") and is_on_floor():
@@ -47,4 +58,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		
 	prevSpeedY = velocity.y
+	$Sprite2D.scale.y = (abs(velocity.y / 4000)) + 1 
+	
 	move_and_slide()
