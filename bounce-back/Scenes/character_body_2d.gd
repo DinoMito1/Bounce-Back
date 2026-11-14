@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		
 		
 	
-	if is_on_floor() and prevSpeedY>1250:
+	if is_on_floor() and prevSpeedY>1250: # shakes the screen if you hit the ground fast
 		for i in range(prevSpeedY/70):
 			$Camera2D.offset = Vector2(randf_range(-1*(prevSpeedY/500),1*(prevSpeedY/500)),randf_range(-1*(prevSpeedY/500),1*(prevSpeedY/500)))	
 			await get_tree().create_timer(.01).timeout
