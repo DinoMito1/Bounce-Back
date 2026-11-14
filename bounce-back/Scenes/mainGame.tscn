@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bksuq5lrbcf7c"]
+
+[ext_resource type="PackedScene" uid="uid://c72sicyh7nvb2" path="res://Scenes/player.tscn" id="1_dx5hc"]
+[ext_resource type="Script" uid="uid://dp7ja1ieabx34" path="res://Scenes/main_game.gd" id="1_ldq11"]
+[ext_resource type="Texture2D" uid="uid://cky07udbg56sl" path="res://Sprites/BG/Ground.png" id="3_2k2ja"]
+[ext_resource type="Texture2D" uid="uid://djm8qima3pk3" path="res://Sprites/BG/bouncebackstartBGFinish.png" id="4_2k2ja"]
+[ext_resource type="PackedScene" uid="uid://wa1wuqyiluym" path="res://Scenes/Platform1.tscn" id="5_yergv"]
+[ext_resource type="PackedScene" uid="uid://ddycjp5iaw7y6" path="res://Scenes/platformlong1.tscn" id="6_22woh"]
+[ext_resource type="PackedScene" uid="uid://drtjmh726hcw2" path="res://Scenes/LongIcePlatform.tscn" id="7_i3m4h"]
+[ext_resource type="PackedScene" uid="uid://7ogw4l5ew1ds" path="res://Scenes/IcePlatform.tscn" id="8_p034j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgcf5"]
+size = Vector2(192.75592, 22.125984)
+
+[node name="Node2D" type="Node2D" unique_id=1760529037]
+script = ExtResource("1_ldq11")
+
+[node name="Player" parent="." unique_id=661682380 instance=ExtResource("1_dx5hc")]
+z_index = 1
+position = Vector2(-390, -2540)
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=689955837]
+position = Vector2(6, 98)
+texture = ExtResource("3_2k2ja")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground" unique_id=1380577012]
+position = Vector2(-10, -91)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D" unique_id=108367960]
+position = Vector2(0, 81.99999)
+scale = Vector2(6.35, 6.35)
+shape = SubResource("RectangleShape2D_bgcf5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/StaticBody2D" unique_id=884598229]
+position = Vector2(647.99994, -2272)
+rotation = -3.1415904
+scale = Vector2(0.4548593, -208.91853)
+shape = SubResource("RectangleShape2D_bgcf5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground/StaticBody2D" unique_id=361821918]
+position = Vector2(-640.00006, -2261)
+rotation = -3.1415904
+scale = Vector2(0.4548593, -208.91853)
+shape = SubResource("RectangleShape2D_bgcf5")
+
+[node name="Finish" type="Sprite2D" parent="." unique_id=231213300]
+position = Vector2(6, -3836)
+texture = ExtResource("4_2k2ja")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=748555237]
+z_index = -3
+offset_left = -645.0
+offset_top = -4163.0
+offset_right = 717.0
+offset_bottom = 40.0
+color = Color(0.5137255, 0.67058825, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=151355031]
+z_index = -2
+offset_left = -606.0
+offset_top = -3608.0
+offset_right = 618.0
+offset_bottom = 57.0
+color = Color(0.5176471, 0.49411765, 0.5294118, 1)
+
+[node name="Platform" parent="." unique_id=662882430 instance=ExtResource("5_yergv")]
+position = Vector2(-101, -213)
+
+[node name="LongPlatform" parent="." unique_id=712945847 instance=ExtResource("6_22woh")]
+position = Vector2(235, -386)
+
+[node name="LongIcePlatform" parent="." unique_id=1974460691 instance=ExtResource("7_i3m4h")]
+position = Vector2(380, -196)
+
+[node name="IcePlatform" parent="." unique_id=722251016 instance=ExtResource("8_p034j")]
+position = Vector2(147, -139)

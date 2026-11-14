@@ -1,0 +1,283 @@
+[gd_scene format=3 uid="uid://df0ns1g6s3swm"]
+
+[ext_resource type="Texture2D" uid="uid://del0e3iva4p1p" path="res://Sprites/BG/bouncebackstartBG.png" id="1_brycl"]
+[ext_resource type="Script" uid="uid://bvlqo1umn3vig" path="res://Scenes/startGame.gd" id="1_ufl4h"]
+[ext_resource type="Texture2D" uid="uid://da86urt6a2tey" path="res://Sprites/BG/bouncebackstartBG2.png" id="3_yga4i"]
+[ext_resource type="Texture2D" uid="uid://o6f5wfmp7gcq" path="res://Sprites/BG/bbstartrock.png" id="4_4ksr6"]
+[ext_resource type="Texture2D" uid="uid://bqq2jat8mdp8" path="res://Sprites/Characters/snowman.png" id="5_eumj5"]
+[ext_resource type="Texture2D" uid="uid://brsc8b8nlx4yf" path="res://Sprites/Characters/snowmanhatless.png" id="6_orcbb"]
+[ext_resource type="Texture2D" uid="uid://ckcc0824l7fqs" path="res://Sprites/Characters/snowmanHat.png" id="6_sbiut"]
+[ext_resource type="Texture2D" uid="uid://dqjfl1oxhdif3" path="res://Sprites/OtherStuff/pressSpacePls2.png" id="6_uc7fm"]
+[ext_resource type="Texture2D" uid="uid://b68ybbxla847e" path="res://Sprites/OtherStuff/pressSpacePls.png" id="8_sbiut"]
+
+[sub_resource type="Animation" id="Animation_sbiut"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(99, 162)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fallingSnowman:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, -40)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("snowmanHat:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, -52)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("fallingSnowman:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_eumj5")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("snowmanHat:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7685413]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("fallingSnowman:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.17453292]
+}
+
+[sub_resource type="Animation" id="Animation_orcbb"]
+resource_name = "im_falling"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.5, 2.51, 2.75, 3, 3.2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(99, 162), Vector2(95, 165), Vector2(95, 165), Vector2(95, 165), Vector2(79, 167), Vector2(72, 167), Vector2(64, 175), Vector2(58, 250)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.8726646259971648]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fallingSnowman:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5, 2.7, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-13, -40), Vector2(-16.043898, -44.407074), Vector2(-26.928808, -52.248783)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("snowmanHat:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.5, 2.95, 3.5, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-13, -52), Vector2(7.951, -48), Vector2(42.84, -60), Vector2(74, -60), Vector2(73.062, -10)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("fallingSnowman:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_eumj5"), ExtResource("6_orcbb")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("snowmanHat:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.033333335, 2.5, 3.5, 4, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.17453292519943295, 1.0980923, 0.821277, 1.1228014]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("fallingSnowman:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.17453292]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhixo"]
+_data = {
+&"RESET": SubResource("Animation_sbiut"),
+&"im_falling": SubResource("Animation_orcbb")
+}
+
+[sub_resource type="Animation" id="Animation_56e3h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_sbiut")]
+}
+
+[sub_resource type="Animation" id="Animation_eumj5"]
+resource_name = "spacebar_move"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_sbiut"), ExtResource("6_uc7fm"), ExtResource("8_sbiut")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sbiut"]
+_data = {
+&"RESET": SubResource("Animation_56e3h"),
+&"spacebar_move": SubResource("Animation_eumj5")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1142536708]
+scale = Vector2(3, 3)
+script = ExtResource("1_ufl4h")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1998902191]
+position = Vector2(160, 90)
+texture = ExtResource("1_brycl")
+
+[node name="fallingSnowman" type="Sprite2D" parent="BG" unique_id=1910437848]
+position = Vector2(-74, 32)
+texture = ExtResource("5_eumj5")
+
+[node name="BG2" type="Sprite2D" parent="." unique_id=1470160964]
+position = Vector2(160, 90)
+texture = ExtResource("3_yga4i")
+
+[node name="FallingRock" type="Sprite2D" parent="." unique_id=1515647247]
+position = Vector2(99, 162)
+texture = ExtResource("4_4ksr6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FallingRock" unique_id=1122419530]
+libraries/ = SubResource("AnimationLibrary_hhixo")
+
+[node name="fallingSnowman" type="Sprite2D" parent="FallingRock" unique_id=1184552167]
+position = Vector2(-13, -40)
+rotation = -0.17453292
+texture = ExtResource("5_eumj5")
+
+[node name="snowmanHat" type="Sprite2D" parent="FallingRock" unique_id=1220846228]
+position = Vector2(-13, -52)
+rotation = 0.7685413
+texture = ExtResource("6_sbiut")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1249209152]
+anchor_mode = 0
+
+[node name="PressSpace" type="Sprite2D" parent="." unique_id=1739440079]
+modulate = Color(1, 1, 1, 0.8235294)
+position = Vector2(165, 76)
+texture = ExtResource("8_sbiut")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PressSpace" unique_id=2095188953]
+libraries/ = SubResource("AnimationLibrary_sbiut")
+
+[node name="FadeOutBox" type="ColorRect" parent="." unique_id=1957514551]
+modulate = Color(1, 1, 1, 0)
+offset_left = -16.0
+offset_top = -14.000002
+offset_right = 24.0
+offset_bottom = 25.999998
+scale = Vector2(9.064133, 5.406261)
+color = Color(0, 0, 0, 1)
