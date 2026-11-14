@@ -3,11 +3,13 @@
 ## What it's about:
 You play as a snowman who just fell off of Snowy Mountain. You have to bounce your way back up to your home at the mountains peak, all while avoiding snowballs, spikes, and cracking ice.
 
+No matter how many times you fall down the mountain, You will always *bounce back*.
+
 ## How to play:
 Spacebar: Jump
 A and D:  Move left and right
 
-Click this link if you want to play:
+## Click this link if you want to play:
 https://dino-mito.itch.io/snowy-mountain
 
 ## Team and Credits:
