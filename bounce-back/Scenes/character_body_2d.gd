@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const AIRSPEED = 300.0
-const GROUNDSPEED = 100
+const AIRSPEED = 325.0
+const GROUNDSPEED = 70
 const JUMP_VELOCITY = -750.0
 const MaxJumpTime = 0.7
 var jumpTime = 0
@@ -47,17 +47,22 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
-	
+	if direction:
+		$Sprite2D.scale.x = direction * -1
 	if direction and firstGroundTouch==true and not is_on_floor() :
 		velocity.x = direction * AIRSPEED
 	elif direction and is_on_floor():
-		$Sprite2D.scale.x = direction * -1
 		$Sprite2D/AnimationPlayer.play("hop")
 		velocity.x = direction * GROUNDSPEED
 	else:
 		velocity.x = 0
-		
+
+
+	
 	prevSpeedY = velocity.y
 	$Sprite2D.scale.y = (abs(velocity.y / 4000)) + 1 
+	
+	if Global.boucePadHitSpeedy != 0:
+		velocity.y = Global.boucePadHitSpeedy
 	
 	move_and_slide()

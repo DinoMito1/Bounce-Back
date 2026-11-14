@@ -16,6 +16,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		await get_tree().create_timer(.2).timeout
 		$Sprite2D.texture = load("res://Sprites/platforms/icePlatformBreak.png")
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(.75).timeout
 		get_tree().create_tween().tween_property($".", "scale", Vector2(1,0),.1)
 		$Sprite2D/StaticBody2D/CollisionShape2D.disabled = true
+		await get_tree().create_timer(3).timeout
+		get_tree().create_tween().tween_property($".", "scale", Vector2(1,1),.5)
+		$Sprite2D/StaticBody2D/CollisionShape2D.disabled = false

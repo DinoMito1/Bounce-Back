@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c11waxyw75mro"]
+
+[ext_resource type="Texture2D" uid="uid://d13uisjxu5l24" path="res://Sprites/OtherStuff/snowPuff.png" id="1_0m4jk"]
+[ext_resource type="Script" uid="uid://enn8x77u3i44" path="res://Scenes/snowpuff.gd" id="1_gdvt7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdvt7"]
+size = Vector2(64, 32)
+
+[node name="Node2D" type="Node2D" unique_id=1934928038]
+script = ExtResource("1_gdvt7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=79249763]
+texture = ExtResource("1_0m4jk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1793864813]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1269775937]
+position = Vector2(1, -6)
+shape = SubResource("RectangleShape2D_gdvt7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

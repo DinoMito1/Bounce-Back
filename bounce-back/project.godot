@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/BaseScene.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Sprites/OtherStuff/icon.svg"
 
+[autoload]
+
+Global="*uid://corwavar1vrsu"
+
 [display]
 
 window/size/viewport_width=960
