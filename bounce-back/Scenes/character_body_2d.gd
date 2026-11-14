@@ -9,6 +9,7 @@ var jumpTime = 0
 var prevSpeedY = 0
 var firstGroundTouch = false
 var fallTime = 0
+var dowinscene = false
 
 
 func _physics_process(delta: float) -> void:
@@ -64,5 +65,17 @@ func _physics_process(delta: float) -> void:
 	
 	if Global.boucePadHitSpeedy != 0:
 		velocity.y = Global.boucePadHitSpeedy
+		
+	if Global.won == true:
+		await get_tree().create_timer(1).timeout
+		if is_on_floor():
+			velocity = Vector2(0,0)
+		if dowinscene == false:
+			dowinscene = true
+			$"../../Youwin".position = $"..".position + Vector2(0,-350)
+			get_tree().create_tween().tween_property($"../../Youwin","modulate", Color(1,1,1,1),2)
+			await get_tree().create_timer(1.5).timeout
+			get_tree().create_tween().tween_property($"../../Youwin/Thankyou","modulate", Color(1,1,1,1),2)
+			
 	
 	move_and_slide()

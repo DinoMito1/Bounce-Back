@@ -12,3 +12,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_noescapingpls_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		body.position = Vector2i(-400,-150)
+
+
+func _on_winbox_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		Global.won = true
